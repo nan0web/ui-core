@@ -1,0 +1,25 @@
+{
+	"name": "@nan0web/ui-core",
+	"version": "1.0.0",
+	"description": "Core UI for nan0web",
+	"main": "./src/index.js",
+	"type": "module",
+	"types": "./types/index.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"playground": "node playground/main.js",
+		"test": "node --test \"src/**/*.test.js\"",
+		"test:docs": "node --test src/README.md.js"
+	},
+	"keywords": [
+		"ui",
+		"nan0web"
+	],
+	"author": "nan0web",
+	"license": "ISC",
+	"packageManager": "pnpm@10.11.0",
+	"devDependencies": {
+	},
+	"peerDependencies": {
+	}
+}

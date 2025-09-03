@@ -108,7 +108,7 @@ export default class Element {
 		}
 
 		if (key.startsWith('$on') && key.length > 3) {
-			return { [key.slice(1).toLowerCase()]: value }
+			return { [key.slice(1)]: value }
 		}
 
 		const propAlias = this.PROP_ALIASES[key]

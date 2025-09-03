@@ -48,7 +48,7 @@ describe('Element', () => {
 			expected: {
 				type: 'div',
 				content: 'Test',
-				props: { onclick: () => { } }
+				props: { onClick: () => { } }
 			}
 		},
 		{
@@ -71,10 +71,10 @@ describe('Element', () => {
 			assert.deepEqual(element.content, expected.content)
 
 			// Special handling for functions in props
-			if (expected.props.onclick) {
-				assert.equal(typeof element.props.onclick, 'function')
-				delete expected.props.onclick
-				delete element.props.onclick
+			if (expected.props.onClick) {
+				assert.equal(typeof element.props.onClick, 'function')
+				delete expected.props.onClick
+				delete element.props.onClick
 			}
 
 			// Special handling for nested objects
@@ -146,8 +146,8 @@ describe('Element', () => {
 	it("should parse $onClick and $onKeyDown properly", () => {
 		const input = { button: "Hello", $onClick: () => {}, $onKeyDown: () => {} }
 		const el = Element.from(input)
-		assert.ok(el.props.onclick)
-		assert.ok(el.props.onkeydown)
+		assert.ok(el.props.onClick)
+		assert.ok(el.props.onKeyDown)
 	})
 
 	it("should process i18n when $t key is present", () => {

@@ -1,6 +1,8 @@
 # @nan0web/ui-core
 
-<!-- %PACKAGE_STATUS% -->
+|[Status](https://github.com/nan0web/monorepo/blob/main/system.md#написання-сценаріїв)|Documentation|Test coverage|Features|Npm version|
+|---|---|---|---|---|
+ |🟢 `99.3%` |🧪 [English 🏴󠁧󠁢󠁥󠁮󠁧󠁿](https://github.com/nan0web/ui-core/blob/main/README.md)<br />[Українською 🇺🇦](https://github.com/nan0web/ui-core/blob/main/docs/uk/README.md) |🟢 `97.8%` |✅ d.ts 📜 system.md 🕹️ playground |— |
 
 A library for creating framework-agnostic UI elements.
 Allows describing interfaces as simple objects.
@@ -100,8 +102,8 @@ const element = new Element({
 	$onClick: handleClick,
 	$onKeyDown: () => {}
 })
-console.info(typeof element.props.onClick) // "function"
-console.info(typeof element.props.onKeyDown) // "function"
+console.info(typeof element.props.onclick) // "function"
+console.info(typeof element.props.onkeydown) // "function"
 
 ```
 ## i18n
@@ -203,10 +205,6 @@ const result = processI18n(content, t, data)
 console.info(result) // ["Name: John", "Welcome", ["Nested"]]
 
 ```
-## Java•Script
-
-Uses `d.ts` files for autocompletion
-
 ## Themes
 
 Themes are built using atoms, molecules, and organisms.
@@ -242,6 +240,10 @@ const theme = DarkLightTheme.getActiveTheme()
 console.info(theme) // { background: "#fff", text: "#000" }
 
 ```
+## Java•Script
+
+Uses `d.ts` files for autocompletion
+
 ## Contributing
 
 How to contribute? - [check here](./CONTRIBUTING.md)

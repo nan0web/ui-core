@@ -7,7 +7,7 @@ import {
 	DocsParser,
 	runSpawn,
 } from "@nan0web/test"
-import Element, { processI18n } from "./index.js"
+import Element, { processI18n, tokens, getUserTheme, CustomTheme, DarkLightTheme } from "./index.js"
 
 const fs = new FS()
 let pkg
@@ -165,11 +165,11 @@ function testRender() {
 			$onClick: handleClick,
 			$onKeyDown: () => {}
 		})
-		console.info(typeof element.props.onClick) // "function"
-		console.info(typeof element.props.onKeyDown) // "function"
+		console.info(typeof element.props.onclick) // "function"
+		console.info(typeof element.props.onkeydown) // "function"
 
-		assert.equal(typeof element.props.onClick, "function")
-		assert.equal(typeof element.props.onKeyDown, "function")
+		assert.equal(console.output()[0][1], "function")
+		assert.equal(console.output()[1][1], "function")
 	})
 
 	/**
@@ -185,7 +185,7 @@ function testRender() {
 		const result = processI18n(input, t)
 		console.info(result) // "Привіт!"
 
-		assert.equal(result, "Привіт!")
+		assert.equal(console.output()[0][1], "Привіт!")
 	})
 
 	/**
@@ -198,7 +198,7 @@ function testRender() {
 		const result = processI18n(text, null, data)
 		console.info(result) // "User: Іван, Age: 30"
 
-		assert.equal(result, "User: Іван, Age: 30")
+		assert.equal(console.output()[0][1], "User: Іван, Age: 30")
 	})
 
 	/**
@@ -262,9 +262,9 @@ function testRender() {
 		console.info(element.hasText())    // true
 		console.info(element.hasChildren()) // true
 
-		assert.equal(element.type, "div")
-		assert.equal(element.hasText(), true)
-		assert.equal(element.hasChildren(), true)
+		assert.equal(console.output()[0][1], "div")
+		assert.equal(console.output()[1][1], true)
+		assert.equal(console.output()[2][1], true)
 	})
 
 	/**
@@ -291,15 +291,7 @@ function testRender() {
 		const result = processI18n(content, t, data)
 		console.info(result) // ["Name: John", "Welcome", ["Nested"]]
 
-		assert.deepEqual(result, ["Name: John", "Welcome", ["Nested"]])
-	})
-
-	/**
-	 * @docs
-	 * ## Java•Script
-	 */
-	it("Uses `d.ts` files for autocompletion", () => {
-		assert.equal(pkg.types, "types/index.d.ts")
+		assert.deepEqual(console.output()[0][1], ["Name: John", "Welcome", ["Nested"]])
 	})
 
 	/**
@@ -330,7 +322,7 @@ function testRender() {
 		})
 		console.info(theme.atoms.Button.background) // "red"
 		assert.ok(theme instanceof CustomTheme)
-		assert.ok(theme.atoms.Button.background)
+		assert.equal(console.output()[0][1], "red")
 	})
 
 	/**
@@ -345,7 +337,15 @@ function testRender() {
 		const theme = DarkLightTheme.getActiveTheme()
 		console.info(theme) // { background: "#fff", text: "#000" }
 
-		assert.deepEqual(theme, DarkLightTheme.light)
+		assert.deepEqual(console.output()[0][1], DarkLightTheme.light)
+	})
+
+	/**
+	 * @docs
+	 * ## Java•Script
+	 */
+	it("Uses `d.ts` files for autocompletion", () => {
+		assert.equal(pkg.types, "./types/index.d.ts")
 	})
 
 	/**

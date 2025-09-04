@@ -1,86 +1,86 @@
 /**
- * @file Element — модель декларативного UI-блоку.
- * Формат: { Button: [...], $variant: 'info', $onClick: fn }
- * Агностична до фреймворку.
+ * @file Element — the model of a declarative UI block.
+ * Format: { Button: [...], $variant: 'info', $onClick: fn }
+ * Framework-agnostic.
  */
 export default class Element {
     /** @type {Record<string, string | ((val: any, key: string) => Record<string, any>)>} */
     static PROP_ALIASES: Record<string, string | ((val: any, key: string) => Record<string, any>)>;
     /**
-     * Фабричний метод створення екземплярів.
+     * Factory method to create or return an existing `Element`.
      * @param {Object} input
      * @returns {Element}
      */
     static from(input: any): Element;
     /**
-     * Парсер $-пропсів.
-     * Перетворює, наприклад:
+     * Parses $-props.
+     * Converts for example:
      *   - $style="color:red;font-size:14px" → { style: { color: 'red', 'font-size': '14px' } }
      *   - $onClick=fn → { onClick: fn }
      *   - $ariaHidden=true → { 'aria-hidden': true }
      *
-     * @param {string} key - Назва пропсу
-     * @param {any} value - Значення
-     * @returns {Object} - Об’єкт { propName: newVal }
+     * @param {string} key - The name of the prop
+     * @param {any} value - The value of the prop
+     * @returns {Object} - An object { propName: newVal }
      */
     static parseProp(key: string, value: any): any;
     /**
-     * Парсить рядковий стиль (формат CSS).
+     * Parses an inline CSS style string.
      * @param {string} styleStr
      * @returns {Object}
      */
     static parseInlineStyle(styleStr: string): any;
     /**
-     * Видобуває $-пропси з блоку.
+     * Extracts $-props from the block.
      * @param {Object} block
-     * @param {boolean} keep$ - Залишити `$` у ключах
-     * @param {Function} [flatMap] - Функція, що перетворює пару (ключ, значення) → { newKey: newVal }
+     * @param {boolean} keep$ - Whether to keep the prefix `$`.
+     * @param {Function} [flatMap] - Function that transforms a key-value pair into a new key-value pair.
      * @returns {Object}
      */
     static extractProps(block: any, keep$?: boolean, flatMap?: Function | undefined): any;
     /**
-     * Видобуває теги (непрефіксовані ключі) з блоку.
+     * Extracts tags (non-prefixed keys) from the block.
      * @param {Object} block
      * @returns {Array<[string, any]>}
      */
     static extractTags(block: any): Array<[string, any]>;
     /**
-     * Створює `Element` із декларативного блоку.
-     * @param {Object} input - Наприклад, { Button: ["Натисни"], $variant: "primary" }
+     * Creates an `Element` from a declarative block.
+     * @param {Object} input - For example, { Button: ["Click"], $variant: "primary" }
      */
     constructor(input?: any);
     /**
-     * Тип компонента або HTML-тегу (наприклад, "Button", "div")
+     * The component type or HTML tag (e.g., "Button", "div")
      * @type {string}
      */
     type: string;
     /**
-     * Вміст елемента.
-     * Може бути:
-     *   - рядок → текст
-     *   - true → порожній
-     *   - масив → вкладені блоки { Icon } або текстові елементи
+     * The content of the element.
+     * Can be:
+     *   - string → text
+     *   - true → empty
+     *   - array → nested blocks { Icon } or text nodes
      * @type {string | true | any[]}
      */
     content: string | true | any[];
     /**
-     * Пропси (властивості), видобуті з $-ключів.
-     * Наприклад, { $onClick: fn, $variant: 'info' } → { onClick: fn, variant: 'info' }
+     * Props extracted from $-keys.
+     * For example, { $onClick: fn, $variant: 'info' } → { onClick: fn, variant: 'info' }
      * @type {Object}
      */
     props: any;
     /**
-     * Чи містить елемент вкладені елементи (а не тільки текст).
+     * Checks if the element contains nested elements (not only text).
      * @returns {boolean}
      */
     hasChildren(): boolean;
     /**
-     * Чи містить вміст текстові фрагменти.
+     * Checks if the content contains text fragments.
      * @returns {boolean}
      */
     hasText(): boolean;
     /**
-     * Повертає масив вкладених елементів (екземплярів `Element`).
+     * Returns an array of child elements (Element instances).
      * @returns {Element[]}
      */
     getChildElements(): Element[];

@@ -2,7 +2,7 @@
 
 |[Status](https://github.com/nan0web/monorepo/blob/main/system.md#написання-сценаріїв)|Documentation|Test coverage|Features|Npm version|
 |---|---|---|---|---|
- |🟢 `99.3%` |🧪 [English 🏴󠁧󠁢󠁥󠁮󠁧󠁿](https://github.com/nan0web/ui-core/blob/main/README.md)<br />[Українською 🇺🇦](https://github.com/nan0web/ui-core/blob/main/docs/uk/README.md) |🟢 `97.8%` |✅ d.ts 📜 system.md 🕹️ playground |— |
+ |🟢 `99.4%` |🧪 [English 🏴󠁧󠁢󠁥󠁮󠁧󠁿](https://github.com/nan0web/ui-core/blob/main/README.md)<br />[Українською 🇺🇦](https://github.com/nan0web/ui-core/blob/main/docs/uk/README.md) |🟢 `98.0%` |✅ d.ts 📜 system.md 🕹️ playground |— |
 
 A library for creating framework-agnostic UI elements.
 Allows describing interfaces as simple objects.
@@ -55,7 +55,6 @@ const element = new Element({
 console.info(element.type)    // "Button"
 console.info(element.content) // ["Click me"]
 console.info(element.props)   // { variant: "primary" }
-
 ```
 ### Nested Elements
 
@@ -87,7 +86,6 @@ const element = new Element({
 	$ariaLabel: "Close dialog"
 })
 console.info(element.props) // { "aria-label": "Close dialog" }
-
 ```
 ### Event Handlers
 
@@ -102,9 +100,8 @@ const element = new Element({
 	$onClick: handleClick,
 	$onKeyDown: () => {}
 })
-console.info(typeof element.props.onclick) // "function"
-console.info(typeof element.props.onkeydown) // "function"
-
+console.info(typeof element.props.onClick)
+console.info(typeof element.props.onKeyDown)
 ```
 ## i18n
 
@@ -117,7 +114,6 @@ const input = { $t: "greetings.hello" }
 const t = (key) => key === "greetings.hello" ? "Привіт!" : key
 const result = processI18n(input, t)
 console.info(result) // "Привіт!"
-
 ```
 
 How to substitute variables in text content with processI18n?
@@ -127,11 +123,8 @@ const text = "User: {{name}}, Age: {{age}}"
 const data = { name: "Іван", age: "30" }
 const result = processI18n(text, null, data)
 console.info(result) // "User: Іван, Age: 30"
-
 ```
 ## Playground: Try Before You Commit
-
-There is a CLI sandbox to experiment safely.
 
 There is a CLI sandbox to experiment safely:
 ```bash
@@ -144,6 +137,20 @@ npm run playground
 ## API Reference
 
 ### Element Class
+
+```mermaid
+flowchart TD
+    A[Structure] -->|UI-Block| B(Element)
+    C[Styling] -->|Tokens + Theme| B
+    D[Localization] -->|processI18n| B
+    B --> E[Render в React/Vue/etc]
+
+    style A fill:#eef,stroke:#333,color:#000
+    style C fill:#efe,stroke:#333,color:#000
+    style D fill:#fee,stroke:#333,color:#000
+    style B fill:#cfc,stroke:#333,color:#000
+    style E fill:#ffcc00,stroke:#333,color:#000
+```
 
 * **Properties**
   * `type` – the component type or HTML tag (e.g. "Button", "div").
@@ -165,6 +172,24 @@ npm run playground
   * `extractProps()` – pulls all $-prefixed props.
   * `extractTags()` – pulls non-prefixed keys as [type, content].
 
+```mermaid
+flowchart TD
+    I["Input: { Button, $props, content }"] --> J["Element.from(input)"]
+    J --> K[extractProps + extractTags]
+    K --> L[parseProp: $onClick → onClick]
+    K --> M[parseInlineStyle: 'color:red']
+    K --> N[PROP_ALIASES: $variant → variant]
+
+    N --> O[Element Instance]
+    O --> P[hasChildren?]
+    O --> Q[hasText?]
+    O --> R["getChildElements()"]
+
+    style I fill:#eef,stroke:#333,color:#000
+    style O fill:#cfc,stroke:#333,color:#000
+    style K fill:#def,stroke:#333,color:#000
+```
+
 How to create Element with complex content?
 ```js
 import Element from '@nan0web/ui-core'
@@ -179,7 +204,6 @@ const element = new Element({
 console.info(element.type)         // "div"
 console.info(element.hasText())    // true
 console.info(element.hasChildren()) // true
-
 ```
 ### processI18n Utility
 
@@ -203,11 +227,30 @@ const t = (key) => key === "welcome" ? "Welcome" : "Nested"
 const data = { name: "John" }
 const result = processI18n(content, t, data)
 console.info(result) // ["Name: John", "Welcome", ["Nested"]]
-
 ```
 ## Themes
 
 Themes are built using atoms, molecules, and organisms.
+```mermaid
+flowchart TD
+    T[tokens.js] --> U["space, color, radius, shadow"]
+    U --> V[Theme]
+    V --> W[atoms: Button, Input]
+    V --> X[molecules: Card]
+    V --> Y[organisms: Modal]
+
+    V --> Z[CustomTheme]
+    V --> AA[DarkLightTheme]
+    V --> AB[NightTheme]
+
+    Z --> AC["getUserTheme(config)"]
+    AA --> AD["getActiveTheme() → prefers-color-scheme"]
+
+    style T fill:#efe,stroke:#333,color:#000
+    style V fill:#cfc,stroke:#333,color:#000
+    style Z fill:#ddf,stroke:#333,color:#000
+    style AA fill:#ddf,stroke:#333,color:#000
+```
 
 How to access theme tokens?
 ```js

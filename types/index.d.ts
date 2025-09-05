@@ -1,10 +1,11 @@
+export { processI18n } from "./utils/processI18n.js";
+export { resolveContext } from "./utils/resolveContext.js";
+export { tokens } from "./tokens.js";
 export default Element;
 import Element from "./Element.js";
-import { processI18n } from "./utils/processI18n.js";
 import { default as Theme } from "./theme/index.js";
 import { getUserTheme } from "./theme/index.js";
 import { CustomTheme } from "./theme/index.js";
 import { NightTheme } from "./theme/index.js";
 import { DarkLightTheme } from "./theme/index.js";
-import { tokens } from "./tokens.js";
-export { Element, processI18n, Theme, getUserTheme, CustomTheme, NightTheme, DarkLightTheme, tokens };
+export { Element, Theme, getUserTheme, CustomTheme, NightTheme, DarkLightTheme };

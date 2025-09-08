@@ -1,4 +1,7 @@
-export default class ReactAppTheme extends Theme {
-    static fontFamily: string;
-}
-import Theme from "../../../theme/index.js";
+declare const _default: {
+    fontFamily: string;
+    atoms: Partial<typeof import("../../../theme/atoms/index.js")>;
+    molecules: typeof import("../../../theme/molecules/index.js");
+    organisms: typeof import("../../../theme/organisms/index.js");
+};
+export default _default;

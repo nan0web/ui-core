@@ -1,9 +1,9 @@
-import Theme from "./Theme.js"
+import { createTheme } from "./createTheme.js"
 
 /**
  * Theme that automatically switches between light/dark modes.
  */
-export default class DarkLightTheme extends Theme {
+export default class DarkLightTheme {
 	/** @type {Object} */
 	static light = {
 		background: "#fff",

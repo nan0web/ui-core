@@ -1,8 +1,10 @@
-export default class Avatar {
-    /** @type {string} */
-    static size: string;
-    /** @type {string} */
-    static borderRadius: string;
-    /** @type {string} */
-    static border: string;
-}
+declare const _default: AvatarTheme;
+export default _default;
+/**
+ * Theme definition for Avatar atom.
+ */
+export type AvatarTheme = {
+    size: string;
+    borderRadius: string;
+    border: string;
+};

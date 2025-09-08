@@ -1,16 +1,14 @@
-export default class Input {
-    /** @type {string} */
-    static borderRadius: string;
-    /** @type {string} */
-    static borderWidth: string;
-    /** @type {string} */
-    static borderColor: string;
-    /** @type {string} */
-    static fontSize: string;
-    /** @type {string} */
-    static paddingX: string;
-    /** @type {string} */
-    static paddingY: string;
-    /** @type {string} */
-    static fontFamily: string;
-}
+declare const _default: InputTheme;
+export default _default;
+/**
+ * Theme definition for Input atom.
+ */
+export type InputTheme = {
+    borderRadius: string;
+    borderWidth: string;
+    borderColor: string;
+    fontSize: string;
+    paddingX: string;
+    paddingY: string;
+    fontFamily: string;
+};

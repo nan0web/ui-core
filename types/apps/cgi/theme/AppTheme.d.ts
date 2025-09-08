@@ -1,6 +1,9 @@
-export default class CGIAppTheme extends Theme {
-    static fontFamily: string;
-    static background: string;
-    static color: string;
-}
-import Theme from "../../../theme/index.js";
+declare const _default: {
+    fontFamily: string;
+    background: string;
+    color: string;
+    atoms: Partial<typeof import("../../../theme/atoms/index.js")>;
+    molecules: typeof import("../../../theme/molecules/index.js");
+    organisms: typeof import("../../../theme/organisms/index.js");
+};
+export default _default;

@@ -5,12 +5,21 @@ import * as organisms from "./organisms/index.js"
 /**
  * Universal UI theme foundation.
  * Holds atoms, molecules, and organisms styling configs.
+ *
+ * @typedef {Object} ThemeConfig
+ * @property {Partial<typeof atoms>} atoms
+ * @property {typeof molecules} molecules
+ * @property {typeof organisms} organisms
  */
-export default class Theme {
-	/** @type {Object} */
-	static atoms = atoms
-	/** @type {Object} */
-	static molecules = molecules
-	/** @type {Object} */
-	static organisms = organisms
+
+/**
+ * Universal UI theme foundation.
+ * Contains styling configurations for all component types.
+ *
+ * @type {ThemeConfig}
+ */
+export default {
+	atoms,
+	molecules,
+	organisms,
 }

@@ -1,19 +1,28 @@
-// src/components/atoms/Badge.js
 import { tokens } from "../../tokens.js"
 
-export default class Badge {
-	/** @type {string} */
-	static borderRadius = tokens.radius.full
-	/** @type {string} */
-	static fontSize = tokens.font.size.sm
-	/** @type {string} */
-	static paddingX = tokens.space.sm
-	/** @type {string} */
-	static paddingY = tokens.space.xs
-	/** @type {string} */
-	static fontWeight = tokens.font.weight.bold
-	/** @type {string} */
-	static backgroundColor = tokens.color.primary
-	/** @type {string} */
-	static color = tokens.color.text
+/**
+ * Theme definition for Badge atom.
+ *
+ * @typedef {Object} BadgeTheme
+ * @property {string} borderRadius
+ * @property {string} fontSize
+ * @property {string} paddingX
+ * @property {string} paddingY
+ * @property {string} fontWeight
+ * @property {string} backgroundColor
+ * @property {string} color
+ */
+
+/**
+ * Badge atom theme.
+ * @type {BadgeTheme}
+ */
+export default {
+	borderRadius: tokens.radius.full,
+	fontSize: tokens.font.size.sm,
+	paddingX: tokens.space.sm,
+	paddingY: tokens.space.xs,
+	fontWeight: tokens.font.weight.bold,
+	backgroundColor: tokens.color.primary,
+	color: tokens.color.text,
 }

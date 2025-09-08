@@ -1,7 +1,8 @@
 import Theme from "../../../theme/index.js"
 
-export default class CGIAppTheme extends Theme {
-	static fontFamily = 'monospace'
-	static background = '#000'
-	static color = '#0f0'
+export default {
+	...Theme,
+	fontFamily: 'monospace',
+	background: '#000',
+	color: '#0f0',
 }

@@ -1,19 +1,28 @@
-// src/components/atoms/Input.js
 import { tokens } from "../../tokens.js"
 
-export default class Input {
-	/** @type {string} */
-	static borderRadius = tokens.radius.md
-	/** @type {string} */
-	static borderWidth = tokens.border.width.md
-	/** @type {string} */
-	static borderColor = tokens.border.color.default
-	/** @type {string} */
-	static fontSize = tokens.font.size.base
-	/** @type {string} */
-	static paddingX = tokens.space.lg
-	/** @type {string} */
-	static paddingY = tokens.space.md
-	/** @type {string} */
-	static fontFamily = tokens.font.family
+/**
+ * Theme definition for Input atom.
+ *
+ * @typedef {Object} InputTheme
+ * @property {string} borderRadius
+ * @property {string} borderWidth
+ * @property {string} borderColor
+ * @property {string} fontSize
+ * @property {string} paddingX
+ * @property {string} paddingY
+ * @property {string} fontFamily
+ */
+
+/**
+ * Input atom theme.
+ * @type {InputTheme}
+ */
+export default {
+	borderRadius: tokens.radius.md,
+	borderWidth: tokens.border.width.md,
+	borderColor: tokens.border.color.default,
+	fontSize: tokens.font.size.base,
+	paddingX: tokens.space.lg,
+	paddingY: tokens.space.md,
+	fontFamily: tokens.font.family,
 }

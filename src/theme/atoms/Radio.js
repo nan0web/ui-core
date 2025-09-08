@@ -1,17 +1,26 @@
-// src/components/atoms/Radio.js
 import { tokens } from "../../tokens.js"
 
-export default class Radio {
-	/** @type {string} */
-	static size = "1.25rem"
-	/** @type {string} */
-	static borderColor = tokens.border.color.default
-	/** @type {string} */
-	static borderRadius = tokens.radius.full
-	/** @type {string} */
-	static borderWidth = tokens.border.width.sm
-	/** @type {string} */
-	static backgroundColor = tokens.color.background
-	/** @type {string} */
-	static checkedColor = tokens.color.primary
+/**
+ * Theme definition for Radio atom.
+ *
+ * @typedef {Object} RadioTheme
+ * @property {string} size
+ * @property {string} borderColor
+ * @property {string} borderRadius
+ * @property {string} borderWidth
+ * @property {string} backgroundColor
+ * @property {string} checkedColor
+ */
+
+/**
+ * Radio atom theme.
+ * @type {RadioTheme}
+ */
+export default {
+	size: "1.25rem",
+	borderColor: tokens.border.color.default,
+	borderRadius: tokens.radius.full,
+	borderWidth: tokens.border.width.sm,
+	backgroundColor: tokens.color.background,
+	checkedColor: tokens.color.primary,
 }

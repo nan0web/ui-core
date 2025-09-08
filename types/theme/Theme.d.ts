@@ -1,12 +1,14 @@
+declare const _default: ThemeConfig;
+export default _default;
 /**
  * Universal UI theme foundation.
  * Holds atoms, molecules, and organisms styling configs.
  */
-export default class Theme {
-    /** @type {Object} */
-    static atoms: any;
-    /** @type {Object} */
-    static molecules: any;
-    /** @type {Object} */
-    static organisms: any;
-}
+export type ThemeConfig = {
+    atoms: Partial<typeof atoms>;
+    molecules: typeof molecules;
+    organisms: typeof organisms;
+};
+import * as atoms from "./atoms/index.js";
+import * as molecules from "./molecules/index.js";
+import * as organisms from "./organisms/index.js";

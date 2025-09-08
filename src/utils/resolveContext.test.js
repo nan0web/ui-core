@@ -61,4 +61,9 @@ describe('resolveContext utility', () => {
 		assert.equal(resolveContextValue(ctx, 'action:save'), ctx.actions.save)
 		assert.equal(resolveContextValue(ctx, 'invalid:path'), undefined)
 	})
+
+	it("gracefully handles missing data", () => {
+		const result = resolveContext({}, "data:unknown")
+		assert.deepStrictEqual(result, [])
+	})
 })

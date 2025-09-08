@@ -1,20 +1,44 @@
-// src/theme/presets/NightTheme.js
-import Theme from "../Theme.js"
+import { createTheme } from "../createTheme.js"
+import { tokens } from "../../tokens.js"
 
 /**
- * Night (dark) theme – overrides solid button colours with darker background
- * while keeping white text for contrast.
+ * Night (dark) theme preset.
+ * Optimized for low-light environments with deep background colors and vibrant text.
+ * Overrides solid button styles while keeping contrast high.
  */
-export default class NightTheme extends Theme {
-	static solid = {
-		primary:   { background: "#0a58ca", color: "#fff", border: "#0a58ca" },
-		secondary: { background: "#343a40", color: "#fff", border: "#343a40" },
-		success:   { background: "#146c43", color: "#fff", border: "#146c43" },
-		warning:   { background: "#d39e00", color: "#212529", border: "#d39e00" },
-		danger:    { background: "#b02a37", color: "#fff", border: "#b02a37" },
-		info:      { background: "#0ab5c9", color: "#fff", border: "#0ab5c9" },
-		light:     { background: "#212529", color: "#fff", border: "#212529" },
-		dark:      { background: "#000", color: "#fff", border: "#000" },
-		link:      { background: "transparent", color: "#0d6efd", border: "transparent" },
-	}
-}
+export default createTheme({
+	color: {
+		text: "#eeeeee",
+		background: "#111111",
+	},
+	atoms: {
+		Button: {
+			color: tokens.color.text,
+			background: tokens.color.primary,
+			shadow: tokens.shadow.sm,
+			hoverBackground: "color-mix(in srgb, var(--color-primary) 80%, black)",
+			borderColor: tokens.border.color.default,
+			solid: {
+				primary: { background: "#0d6efd", color: "#ffffff" },
+				secondary: { background: "#6c757d", color: "#ffffff" },
+				success: { background: "#198754", color: "#ffffff" },
+				warning: { background: "#ffc107", color: "#000000" },
+				danger: { background: "#dc3545", color: "#ffffff" },
+				info: { background: "#0dcaf0", color: "#000000" },
+				light: { background: "#aaaaaa", color: "#000000" },
+				dark: { background: "#212529", color: "#ffffff" },
+				link: { background: "transparent", color: "#6ea8fe", border: "transparent" },
+			},
+			outline: {
+				primary: { background: "transparent", color: "#0d6efd", border: "#0d6efd" },
+				secondary: { background: "transparent", color: "#6c757d", border: "#6c757d" },
+				success: { background: "transparent", color: "#198754", border: "#198754" },
+				warning: { background: "transparent", color: "#ffc107", border: "#ffc107" },
+				danger: { background: "transparent", color: "#dc3545", border: "#dc3545" },
+				info: { background: "transparent", color: "#0dcaf0", border: "#0dcaf0" },
+				light: { background: "transparent", color: "#aaaaaa", border: "#aaaaaa" },
+				dark: { background: "transparent", color: "#212529", border: "#212529" },
+			},
+		},
+	},
+})

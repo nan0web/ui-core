@@ -1,8 +1,2 @@
-/**
- * High contrast theme.
- */
-export default class HighContrastTheme extends Theme {
-    /** @type {Object} */
-    static color: any;
-}
-import Theme from "../Theme.js";
+declare const _default: import("../Theme.js").ThemeConfig;
+export default _default;

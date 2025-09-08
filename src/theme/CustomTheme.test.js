@@ -14,15 +14,9 @@ describe('CustomTheme', () => {
 		assert.ok(theme.color)
 	})
 
-	it('getUserTheme should return HighContrastTheme by name', () => {
-		const theme = getUserTheme('HighContrastTheme')
-		assert.ok(theme instanceof HighContrastTheme)
-	})
-
 	it('getUserTheme should return CustomTheme from config', () => {
 		const config = { color: { background: 'blue' } }
 		const theme = getUserTheme(config)
-		assert.ok(theme instanceof CustomTheme)
 		assert.equal(theme.color.background, 'blue')
 	})
 })

@@ -4,21 +4,18 @@
 /**
  * Returns selected or custom user theme.
  * @param {string | UserThemeConfig} themeNameOrConfig
- * @returns {Theme}
+ * @returns {import('./Theme.js').ThemeConfig}
  */
-export function getUserTheme(themeNameOrConfig: string | UserThemeConfig): Theme;
+export function getUserTheme(themeNameOrConfig: string | UserThemeConfig): import('./Theme.js').ThemeConfig;
 /**
  * Custom user theme.
- */
-export default class CustomTheme extends Theme {
-    /**
-     * @param {UserThemeConfig} config
-     */
-    constructor(config: UserThemeConfig);
-}
+ * Extends the base Theme to allow passing configuration during instantiation.
+ * @param {UserThemeConfig} config
+ * @returns {import('./Theme.js').ThemeConfig}
+*/
+export default function CustomTheme(config: UserThemeConfig): import('./Theme.js').ThemeConfig;
 export type UserThemeConfig = {
     atoms?: object;
     molecules?: object;
     organisms?: object;
 };
-import Theme from "./Theme.js";

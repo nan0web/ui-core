@@ -1,9 +1,9 @@
+declare const _default: AppThemeConfig;
+export default _default;
 /**
  * Base application theme.
  * Should be extended by app-specific themes.
  */
-export default class AppTheme extends Theme {
-    /** @type {string} */
-    static fontFamily: string;
-}
-import Theme from "./Theme.js";
+export type AppThemeConfig = import("./Theme.js").ThemeConfig & {
+    fontFamily?: string;
+};

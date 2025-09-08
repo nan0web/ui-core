@@ -1,11 +1,20 @@
-// src/components/atoms/Avatar.js
 import { tokens } from "../../tokens.js"
 
-export default class Avatar {
-	/** @type {string} */
-	static size = "2.5rem"
-	/** @type {string} */
-	static borderRadius = tokens.radius.full
-	/** @type {string} */
-	static border = `${tokens.border.width.sm} solid ${tokens.border.color.default}`
+/**
+ * Theme definition for Avatar atom.
+ *
+ * @typedef {Object} AvatarTheme
+ * @property {string} size
+ * @property {string} borderRadius
+ * @property {string} border
+ */
+
+/**
+ * Avatar atom theme.
+ * @type {AvatarTheme}
+ */
+export default {
+	size: "2.5rem",
+	borderRadius: tokens.radius.full,
+	border: `${tokens.border.width.sm} solid ${tokens.border.color.default}`,
 }

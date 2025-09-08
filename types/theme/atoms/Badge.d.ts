@@ -1,16 +1,14 @@
-export default class Badge {
-    /** @type {string} */
-    static borderRadius: string;
-    /** @type {string} */
-    static fontSize: string;
-    /** @type {string} */
-    static paddingX: string;
-    /** @type {string} */
-    static paddingY: string;
-    /** @type {string} */
-    static fontWeight: string;
-    /** @type {string} */
-    static backgroundColor: string;
-    /** @type {string} */
-    static color: string;
-}
+declare const _default: BadgeTheme;
+export default _default;
+/**
+ * Theme definition for Badge atom.
+ */
+export type BadgeTheme = {
+    borderRadius: string;
+    fontSize: string;
+    paddingX: string;
+    paddingY: string;
+    fontWeight: string;
+    backgroundColor: string;
+    color: string;
+};

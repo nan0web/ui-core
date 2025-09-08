@@ -1,9 +1,18 @@
-// src/components/atoms/Typography.js
 import { tokens } from "../../tokens.js"
 
-export default class Typography {
-	/** @type {object} */
-	static variants = {
+/**
+ * Theme definition for Typography atom.
+ *
+ * @typedef {Object} TypographyTheme
+ * @property {Object} variants
+ */
+
+/**
+ * Typography atom theme.
+ * @type {TypographyTheme}
+ */
+export default {
+	variants: {
 		h1: { fontSize: "2rem", fontWeight: tokens.font.weight.bold },
 		h2: { fontSize: "1.75rem", fontWeight: tokens.font.weight.bold },
 		h3: { fontSize: "1.5rem", fontWeight: tokens.font.weight.medium },

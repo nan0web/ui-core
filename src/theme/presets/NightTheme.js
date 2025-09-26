@@ -7,10 +7,6 @@ import { tokens } from "../../tokens.js"
  * Overrides solid button styles while keeping contrast high.
  */
 export default createTheme({
-	color: {
-		text: "#eeeeee",
-		background: "#111111",
-	},
 	atoms: {
 		Button: {
 			color: tokens.color.text,
@@ -18,6 +14,11 @@ export default createTheme({
 			shadow: tokens.shadow.sm,
 			hoverBackground: "color-mix(in srgb, var(--color-primary) 80%, black)",
 			borderColor: tokens.border.color.default,
+			borderRadius: tokens.radius.sm,
+			borderWidth: tokens.border.width.sm,
+			fontSize: tokens.font.size.base,
+			paddingX: tokens.space.lg,
+			paddingY: tokens.space.md,
 			solid: {
 				primary: { background: "#0d6efd", color: "#ffffff" },
 				secondary: { background: "#6c757d", color: "#ffffff" },
@@ -39,6 +40,26 @@ export default createTheme({
 				light: { background: "transparent", color: "#aaaaaa", border: "#aaaaaa" },
 				dark: { background: "transparent", color: "#212529", border: "#212529" },
 			},
+			size: {
+				sm: {
+					fontSize: "0.875rem",
+					paddingX: "0.5rem",
+					paddingY: "0.25rem",
+				},
+				md: {
+					fontSize: "1rem",
+					paddingX: "1rem",
+					paddingY: "0.5rem",
+				},
+			},
+			animation: {
+				transition: "background 0.15s ease, transform 0.1s ease",
+				hoverAdjust: 20,
+				activeAdjust: -30,
+				focusScale: 1.02,
+				activeScale: 0.98,
+				disabledOpacity: 0.65,
+			}
 		},
 	},
 })

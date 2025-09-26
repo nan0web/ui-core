@@ -15,6 +15,11 @@ import { tokens } from "../../tokens.js"
  * @property {Object} size
  * @property {Object} animation
  * @property {string} borderColor
+ * @property {string} borderRadius
+ * @property {string} borderWidth
+ * @property {string} fontSize
+ * @property {string} paddingX
+ * @property {string} paddingY
  */
 
 /**
@@ -57,6 +62,11 @@ export default {
 			paddingX: "0.5rem",
 			paddingY: "0.25rem",
 		},
+		md: {
+			fontSize: "1rem",
+			paddingX: "1rem",
+			paddingY: "0.5rem",
+		},
 	},
 
 	animation: {
@@ -66,5 +76,12 @@ export default {
 		focusScale: 1.02,
 		activeScale: 0.98,
 		disabledOpacity: 0.65,
-	}
+	},
+
+	borderColor: tokens.border.color.default,
+	borderRadius: tokens.radius.md,
+	borderWidth: tokens.border.width.md,
+	fontSize: tokens.font.size.base,
+	paddingX: tokens.space.lg,
+	paddingY: tokens.space.md,
 }

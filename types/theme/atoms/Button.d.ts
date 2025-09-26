@@ -14,4 +14,9 @@ export type ButtonTheme = {
     size: any;
     animation: any;
     borderColor: string;
+    borderRadius: string;
+    borderWidth: string;
+    fontSize: string;
+    paddingX: string;
+    paddingY: string;
 };

@@ -1,6 +1,7 @@
 export { processI18n } from "./utils/processI18n.js";
 export { resolveContext } from "./utils/resolveContext.js";
 export { tokens } from "./tokens.js";
+export { createTheme } from "./theme/createTheme.js";
 export default Element;
 import Element from "./Element.js";
 import { default as Theme } from "./theme/index.js";

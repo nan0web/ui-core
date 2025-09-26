@@ -1,0 +1,40 @@
+# The document layout is describe in the $content
+# Every Element is a registered component, HTML tags, or applications
+$content:
+  - Header:
+    - Contacts:
+        # means that current document has .contact property with the information
+        $ref: "#contact"
+      $variant: tiny
+    - Navigation:
+        - $title: Home
+          $href: /
+        - $title: About
+          $href: /about
+      $title: Main navigation
+    - Account: true
+      $variant: dropdown
+  - Promo:
+    - slide:
+      - h1: NaN•Web UI-core package
+      - a: Learn more
+        $href: /docs
+  - Content:
+      $ref: "#content"
+      $class: container py-5
+  - ContactUs
+  - Calculator: true
+    $target: deposit
+  - Footer
+
+$lang: uk
+
+contact:
+  title: Our company
+  tel: +1234567890
+
+content:
+  - h1: Home page
+  - div: Our company produces a lot of
+  # Possible to inject a component Catalog, or any registered component or application, in the content.
+  - Catalog: true

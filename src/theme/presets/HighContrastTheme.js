@@ -6,10 +6,6 @@ import { tokens } from "../../tokens.js"
  * Designed for maximum readability by increasing contrast between text and background.
  */
 export default createTheme({
-	color: {
-		text: "#000000",
-		background: "#ffffff",
-	},
 	atoms: {
 		Button: {
 			color: tokens.color.text,
@@ -17,6 +13,11 @@ export default createTheme({
 			shadow: tokens.shadow.sm,
 			hoverBackground: "color-mix(in srgb, var(--color-primary) 80%, black)",
 			borderColor: tokens.border.color.default,
+			borderRadius: tokens.radius.sm,
+			borderWidth: tokens.border.width.sm,
+			fontSize: tokens.font.size.base,
+			paddingX: tokens.space.lg,
+			paddingY: tokens.space.md,
 			solid: {
 				primary: { background: "#000000", color: "#ffffff" },
 				secondary: { background: "#333333", color: "#ffffff" },

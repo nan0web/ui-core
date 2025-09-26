@@ -4,7 +4,7 @@ import HighContrastTheme from './HighContrastTheme.js'
 
 describe('HighContrastTheme', () => {
 	it('should have defined colors', () => {
-		assert.ok(HighContrastTheme.color.text)
-		assert.ok(HighContrastTheme.color.background)
+		assert.ok(HighContrastTheme.atoms.Button.color)
+		assert.ok(HighContrastTheme.atoms.Button.solid)
 	})
 })

@@ -5,6 +5,16 @@
 	"main": "./src/index.js",
 	"type": "module",
 	"types": "./types/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./src/index.js",
+			"types": "./types/index.d.ts"
+		},
+		"models/*": {
+			"import": "./src/models/*.js",
+			"types": "./types/models/*.d.ts"
+		}
+	},
 	"scripts": {
 		"build": "tsc",
 		"playground": "node playground/main.js",

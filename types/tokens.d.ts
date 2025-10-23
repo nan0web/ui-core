@@ -67,4 +67,53 @@ export namespace tokens {
         let lg_3: string;
         export { lg_3 as lg };
     }
+    export namespace breakpoint {
+        let xs_2: string;
+        export { xs_2 as xs };
+        let sm_5: string;
+        export { sm_5 as sm };
+        let md_4: string;
+        export { md_4 as md };
+        let lg_4: string;
+        export { lg_4 as lg };
+        let xl_2: string;
+        export { xl_2 as xl };
+        export let xxl: string;
+    }
+    export namespace container {
+        let sm_6: string;
+        export { sm_6 as sm };
+        let md_5: string;
+        export { md_5 as md };
+        let lg_5: string;
+        export { lg_5 as lg };
+        let xl_3: string;
+        export { xl_3 as xl };
+        let xxl_1: string;
+        export { xxl_1 as xxl };
+    }
+    export namespace zIndex {
+        let dropdown: number;
+        let sticky: number;
+        let fixed: number;
+        let modalBackdrop: number;
+        let modal: number;
+        let popover: number;
+        let tooltip: number;
+    }
+    export let opacity: {
+        0: string;
+        10: string;
+        25: string;
+        50: string;
+        75: string;
+        90: string;
+        100: string;
+    };
+    export namespace transition {
+        export let fast: string;
+        let medium_1: string;
+        export { medium_1 as medium };
+        export let slow: string;
+    }
 }

@@ -65,4 +65,52 @@ export const tokens = {
 		md: "0 4px 6px rgba(0,0,0,0.1)",
 		lg: "0 10px 25px rgba(0,0,0,0.15)",
 	},
+
+	// Breakpoints (Bootstrap 5)
+	breakpoint: {
+		xs: "0", // extra‑small
+		sm: "576px",
+		md: "768px",
+		lg: "992px",
+		xl: "1200px",
+		xxl: "1400px",
+	},
+
+	// Container max‑widths (Bootstrap 5)
+	container: {
+		sm: "540px",
+		md: "720px",
+		lg: "960px",
+		xl: "1140px",
+		xxl: "1320px",
+	},
+
+	// Z‑index scale (Bootstrap)
+	zIndex: {
+		dropdown: 1000,
+		sticky: 1020,
+		fixed: 1030,
+		modalBackdrop: 1040,
+		modal: 1050,
+		popover: 1060,
+		tooltip: 1070,
+	},
+
+	// Opacity scale
+	opacity: {
+		0: "0",
+		10: "0.1",
+		25: "0.25",
+		50: "0.5",
+		75: "0.75",
+		90: "0.9",
+		100: "1",
+	},
+
+	// Transition durations
+	transition: {
+		fast: "150ms",
+		medium: "300ms",
+		slow: "500ms",
+	},
 }

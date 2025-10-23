@@ -10,7 +10,7 @@
 			"import": "./src/index.js",
 			"types": "./types/index.d.ts"
 		},
-		"models/*": {
+		"./models/*": {
 			"import": "./src/models/*.js",
 			"types": "./types/models/*.d.ts"
 		}

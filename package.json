@@ -1,7 +1,7 @@
 {
 	"name": "@nan0web/ui-core",
 	"version": "1.0.0",
-	"description": "Core UI for nan0web",
+	"description": "Core UI for NaN•Web",
 	"main": "./src/index.js",
 	"type": "module",
 	"types": "./types/index.d.ts",
@@ -17,7 +17,7 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"playground": "node playground/main.js",
+		"play": "node play/main.js",
 		"test": "node --test \"src/**/*.test.js\"",
 		"test:docs": "node --test src/README.md.js",
 		"clean": "rm -rf .cache/ && rm -rf dist/",
@@ -39,11 +39,11 @@
 	"license": "ISC",
 	"packageManager": "pnpm@10.11.0",
 	"devDependencies": {
-		"@nan0web/db-fs": "workspace:*",
-		"@nan0web/log": "workspace:*",
-		"@nan0web/release": "workspace:*",
-		"@nan0web/test": "workspace:*",
-		"@nan0web/types": "workspace:*",
+		"@nan0web/db-fs": "^1.0.0",
+		"@nan0web/log": "^1.0.0",
+		"@nan0web/release": "^1.0.1",
+		"@nan0web/test": "^1.0.2",
+		"@nan0web/types": "^1.0.2",
 		"husky": "^9.1.7"
 	},
 	"peerDependencies": {

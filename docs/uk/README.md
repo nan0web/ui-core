@@ -2,7 +2,7 @@
 
 |[Статус](https://github.com/nan0web/monorepo/blob/main/system.md#написання-сценаріїв)|Документація|Покриття тестами|Функції|Версія Npm|
 |---|---|---|---|---|
-|🟢 `99.4%`|🧪 [Англійською 🏴󠁧󠁢󠁥󠁮󠁧󠁿](https://github.com/nan0web/ui-core/blob/main/README.md)<br />[Українською 🇺🇦](https://github.com/nan0web/ui-core/blob/main/docs/uk/README.md)|🟢 `98.0%`|✅ d.ts 📜 system.md 🕹️ playground|—|
+ |🟢 `99.3%` |🧪 [English 🏴󠁧󠁢󠁥󠁮󠁧󠁿](https://github.com/nan0web/ui-core/blob/main/README.md)<br />[Українською 🇺🇦](https://github.com/nan0web/ui-core/blob/main/docs/uk/README.md) |🟢 `97.9%` |✅ d.ts 📜 system.md 🕹️ playground |— |
 
 Бібліотека для створення UI-елементів, незалежних від фреймворків.
 Дозволяє описувати інтерфейси як прості об'єкти.
@@ -131,7 +131,7 @@ console.info(result) // "Користувач: Іван, Вік: 30"
 git clone https://github.com/nan0web/ui-core.git
 cd ui-core
 npm install
-npm run playground
+npm run play
 ```
 
 ## Документація API

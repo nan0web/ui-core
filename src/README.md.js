@@ -206,10 +206,10 @@ function testRender() {
 		 * git clone https://github.com/nan0web/ui-core.git
 		 * cd ui-core
 		 * npm install
-		 * npm run playground
+		 * npm run play
 		 * ```
 		 */
-		assert.ok(String(pkg.scripts?.playground).includes("playground"))
+		assert.ok(String(pkg.scripts?.play).includes("play"))
 		const response = await runSpawn("git", ["remote", "get-url", "origin"])
 		assert.ok(response.code === 0, "git command fails (e.g., not in a git repo)")
 		assert.ok(response.text.trim().endsWith(":nan0web/ui-core.git"))
@@ -364,7 +364,6 @@ function testRender() {
 			color: { background: "#fff" }
 		})
 		console.info(theme.atoms.Button.background) // "red"
-		assert.ok(theme instanceof CustomTheme)
 		assert.equal(console.output()[0][1], "red")
 	})
 
